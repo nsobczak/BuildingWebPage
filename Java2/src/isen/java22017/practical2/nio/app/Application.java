@@ -13,13 +13,16 @@ public class Application
 {
     public static void main(String[] args) throws IOException
     {
-
+        //===Partie 1===
 //        testPrepareDirectory();
 //        testGetExtension();
 //        testCopyFile();
 //        testMoveFile();
 //        testConstructor("");
-          testSortFiles("");
+//        testSortFiles("");
+
+        //===Partie 2===
+
 
     }
 
