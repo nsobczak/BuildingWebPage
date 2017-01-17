@@ -1,5 +1,7 @@
 package isen.java22017.pagebuilder.builder;
 
+import isen.java22017.practical2.nio.sorter.FileSorter;
+
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -83,10 +85,15 @@ public class PageBuilder
         return outputFile;
     }
 
+
     //_______________________________________________
     /* METHODS */
     public void build() throws IOException
     {
+        if (Files.notExists(this.outputFile)){
+            System.out.println("le fichier n'existe pas => création du fichier");
+            Files.createFile(this.outputFile);
+        }
         BufferedWriter bufferedWriter = Files.newBufferedWriter(
                 this.outputFile, StandardCharsets.UTF_8);
         //write
