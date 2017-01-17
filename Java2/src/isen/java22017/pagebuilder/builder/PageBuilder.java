@@ -89,6 +89,10 @@ public class PageBuilder
     {
         BufferedWriter bufferedWriter = Files.newBufferedWriter(
                 this.outputFile, StandardCharsets.UTF_8);
+        //write
+        bufferedWriter.write("I'm the first line written in this file");
+        //save what has been written
+        bufferedWriter.flush();
     }
 
 

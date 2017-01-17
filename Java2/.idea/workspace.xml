@@ -46,7 +46,7 @@
         <entry file="file://$PROJECT_DIR$/src/isen/java22017/pagebuilder/builder/PageBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="90" column="31" lean-forward="false" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
+              <caret line="93" column="32" lean-forward="false" selection-start-line="93" selection-start-column="32" selection-end-line="93" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1238#1239#0" expanded="true" />
@@ -767,12 +767,12 @@
       <workItem from="1484657489367" duration="6087000" />
       <workItem from="1484668336200" duration="2299000" />
       <workItem from="1484676616217" duration="4760000" />
-      <workItem from="1484684930415" duration="979000" />
+      <workItem from="1484684930415" duration="1144000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35507000" />
+    <option name="totallyTimeSpent" value="35672000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -937,7 +937,7 @@
     <entry file="file://$PROJECT_DIR$/src/isen/java22017/pagebuilder/builder/PageBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="90" column="31" lean-forward="false" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
+          <caret line="93" column="32" lean-forward="false" selection-start-line="93" selection-start-column="32" selection-end-line="93" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1238#1239#0" expanded="true" />
