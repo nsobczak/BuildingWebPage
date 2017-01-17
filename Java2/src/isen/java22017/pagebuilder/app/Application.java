@@ -28,9 +28,10 @@ public class Application
     public static void test01() throws IOException
     {
         PageBuilder pageBuilder = new PageBuilder(
-                Paths.get("src","isen", "java22017", "practical2", "pagebuilder", "index.html "),
-                Paths.get("src","isen", "java22017", "practical2", "pagebuilder", "output.html "));
+                Paths.get("src", "isen", "java22017", "practical2", "pagebuilder", "index.html "),
+                Paths.get("src", "isen", "java22017", "practical2", "pagebuilder", "output.html "));
         pageBuilder.build();
     }
+
 
 }
