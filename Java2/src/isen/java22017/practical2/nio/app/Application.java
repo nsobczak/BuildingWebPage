@@ -7,29 +7,23 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
- * Created by vvinc_000 on 16/01/2017.
+ * Created by Vincent Reynaert and Nicolas Sobczak on 16/01/2017.
  */
 public class Application
 {
     public static void main(String[] args) throws IOException
     {
-        //===Partie 1===
 //        testPrepareDirectory();
 //        testGetExtension();
 //        testCopyFile();
 //        testMoveFile();
 //        testConstructor("");
 //        testSortFiles("");
-
-        //===Partie 2===
-
-
     }
 
 
     //_______________________________________________________
     /* FONCTIONS DE TEST */
-
     public static void testPrepareDirectory() throws IOException
     {
         FileSorter sorter = new FileSorter();
@@ -37,12 +31,14 @@ public class Application
         //System.out.println(path.getParent());
     }
 
+
     public static void testGetExtension() throws IOException
     {
         FileSorter sorter = new FileSorter();
         Path path = Paths.get("src", "isen", "java22017", "practical2", "test.txt");
         System.out.println(sorter.getExtension(path));
     }
+
 
     public static void testCopyFile() throws IOException
     {
@@ -52,6 +48,7 @@ public class Application
                 Paths.get("src", "isen", "java22017", "practical2")
         );
     }
+
 
     public static void testMoveFile() throws IOException
     {
@@ -66,6 +63,7 @@ public class Application
         );
     }
 
+
     public static void testConstructor(String pathToRoot) throws IOException
     {
         FileSorter sorter = new FileSorter(pathToRoot);
@@ -75,6 +73,7 @@ public class Application
         System.out.println("getByExtension : " + sorter.getByExtension());
 
     }
+
 
     public static void testSortFiles(String pathToRoot) throws IOException
     {

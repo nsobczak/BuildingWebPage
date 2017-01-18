@@ -10,7 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
- * Created by nicolas on 17/01/17.
+ * Created by Vincent Reynaert and Nicolas Sobczak on 17/01/17.
  */
 public class Application {
     public static void main(String[] args) throws IOException {
@@ -23,14 +23,12 @@ public class Application {
         Path outputFile = Paths.get("src", "isen", "java22017", "practical2", "pagebuilder", "output.html");
         System.out.println(outputFile);
 
-
         try {
 //            test01(startFile, outputFile);
             test02(startFile, outputFile);
         }catch (IOException e){
             e.printStackTrace();
         }
-
 //        test03();
 
     }
@@ -54,6 +52,7 @@ public class Application {
         }
     }
 
+
     public static void test02(Path startFile, Path outputFile) throws IOException {
         System.out.println("Start Test02 : \n");
         PageBuilder pageBuilder = new PageBuilder(startFile, outputFile);
@@ -67,6 +66,7 @@ public class Application {
             e.printStackTrace();
         }
     }
+
 
     public static void test03(){
         PageBuilder builder = new PageBuilder();

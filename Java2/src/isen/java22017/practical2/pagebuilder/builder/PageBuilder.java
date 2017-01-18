@@ -10,10 +10,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
- * Created by nicolas on 17/01/17.
+ * Created by Vincent Reynaert and Nicolas Sobczak on 17/01/17.
  */
-//TODO : Overload build method pour faire en sorte qu'elle écrive le contenu d'une ligne dans l'output.html
-//TODO : WriteFileContent
 public class PageBuilder {
     /* ATTRIBUTES*/
 
@@ -21,8 +19,9 @@ public class PageBuilder {
     private Path startFile;
     private Path outputFile;
 
-    //_______________________________________________
 
+    //_______________________________________________
+    /* CONSTRUCTORS */
     /**
      * Default constructor
      */
@@ -81,7 +80,6 @@ public class PageBuilder {
 
     //_______________________________________________
     /* METHODS */
-
     /**
      * BUILD writes a lines in output.html and creates this file if necessary
      *
@@ -103,6 +101,7 @@ public class PageBuilder {
             e.printStackTrace();
         }
     }
+
 
     /**
      * BUILD writes a line in the output file
@@ -213,5 +212,6 @@ public class PageBuilder {
             writeFileContent(toInclude,writer);
         }
     }
+
 
 }

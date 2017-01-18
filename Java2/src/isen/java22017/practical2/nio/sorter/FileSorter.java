@@ -7,11 +7,10 @@ import java.nio.file.*;
 //TODO: sortFiles
 
 /**
- * Created by vvinc_000 on 16/01/2017.
+ * Created by Vincent Reynaert and Nicolas Sobczak on 16/01/2017.
  */
 public class FileSorter
 {
-
     /* ATTRIBUTES */
     private Path root;
     private Path archive;
@@ -20,7 +19,6 @@ public class FileSorter
 
 
     //_______________________________________________________
-
     /**
      * Default constructor
      */
@@ -124,8 +122,6 @@ public class FileSorter
 
     //______________________________________________________________
     /* FUNCTIONS */
-
-
     /**
      * PREPAREDIRECTORY
      * It creates a Path “by resolving the newDir from the base”.
@@ -302,5 +298,6 @@ public class FileSorter
         //return the number of entries sorted.
         return numberOfSortedEntry;
     }
+
 
 }
