@@ -2,14 +2,12 @@ package isen.java22017.practical2.pagebuilder.builder;
 
 import isen.java22017.practical2.nio.sorter.FileSorter;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.Writer;
+import java.io.*;
 import java.io.Writer;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /**
  * Created by nicolas on 17/01/17.
@@ -101,7 +99,7 @@ public class PageBuilder {
             bufferedWriter.write("I'm the first line written in this file");
             //save what has been written
             bufferedWriter.flush();
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -122,7 +120,7 @@ public class PageBuilder {
             writer.write(line);
             //save what has been written
             writer.flush();
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -139,20 +137,21 @@ public class PageBuilder {
 
         System.out.println("filename being written : " + filename);
         Path path = this.root.resolve(filename);
+        System.out.println("solved path : "+path.toString());
         try {
             BufferedReader bufferedReader = Files.newBufferedReader(
                     path, StandardCharsets.UTF_8);
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 try {
-                    build(line, writer);
-//                    System.out.println(line);
-                }catch (IOException e){
+                    System.out.println(line);
+                    processLine(writer, line);
+                } catch (IOException e) {
                     System.out.println("Build error");
                     e.printStackTrace();
                 }
             }
-        } catch (IOException e){
+        } catch (IOException e) {
             System.out.println("Buffer error");
             e.printStackTrace();
         }
@@ -164,7 +163,7 @@ public class PageBuilder {
      * It cleans the string parameter,
      * by deleting the spaces at the beginning and at the end
      * (take a look at .trim() of the String class)
-     *
+     * <p>
      * If the string parameter starts with “[[“ and ends with “]]”,
      * it returns the content between these two special brackets,
      * otherwise it returns null.
@@ -172,17 +171,47 @@ public class PageBuilder {
      * @param line
      * @return
      */
-    public String getFileToInclude(String line){
+    public String getFileToInclude(String line) {
         line = line.trim();
         int len = line.length();
-        String stratLine = line.substring(0,2);
-        String endLline = line.substring(len-2,len);
+        // si le string est assez grand on regarde ce qu'il contient
+        if (len > 4){
+            String stratLine = line.substring(0, 2);
+            String endLline = line.substring(len - 2, len);
 
-        if (stratLine.equals("[[") && endLline.equals("]]")){
-            return line.substring(2,len-2);
+            if (stratLine.equals("[[") && endLline.equals("]]")) {
+                return line.substring(2, len - 2);
+            }
         }
         return null;
     }
 
-}
 
+    /**
+     * PROCESSLINE
+     * It calls getFileToInclude(…) with the line parameter.
+     * If the returned value is null,
+     * it writes the line with the writer,
+     * otherwise it opens a new Reader then writes its content line by line with the writer.
+     *
+     * @param writer
+     * @param line
+     * @throws IOException
+     */
+    public void processLine(Writer writer, String line) throws IOException {
+        System.out.println("\t\tProcess the line");
+        String toInclude = getFileToInclude(line);
+        System.out.println(toInclude);
+        if (toInclude == null) {
+            try {
+                build(line, writer);
+            } catch (IOException e) {
+                System.out.println("Build error");
+                e.printStackTrace();
+            }
+        } else {
+            writeFileContent(toInclude,writer);
+        }
+    }
+
+}
