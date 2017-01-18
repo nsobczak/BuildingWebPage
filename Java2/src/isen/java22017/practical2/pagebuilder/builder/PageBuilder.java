@@ -146,7 +146,7 @@ public class PageBuilder {
             while ((line = bufferedReader.readLine()) != null) {
                 try {
                     build(line, writer);
-                    System.out.println(line);
+//                    System.out.println(line);
                 }catch (IOException e){
                     System.out.println("Build error");
                     e.printStackTrace();
@@ -159,5 +159,30 @@ public class PageBuilder {
     }
 
 
+    /**
+     * GETFILETOINCLUDE
+     * It cleans the string parameter,
+     * by deleting the spaces at the beginning and at the end
+     * (take a look at .trim() of the String class)
+     *
+     * If the string parameter starts with “[[“ and ends with “]]”,
+     * it returns the content between these two special brackets,
+     * otherwise it returns null.
+     *
+     * @param line
+     * @return
+     */
+    public String getFileToInclude(String line){
+        line = line.trim();
+        int len = line.length();
+        String stratLine = line.substring(0,2);
+        String endLline = line.substring(len-2,len);
+
+        if (stratLine.equals("[[") && endLline.equals("]]")){
+            return line.substring(2,len-2);
+        }
+        return null;
+    }
 
 }
+
