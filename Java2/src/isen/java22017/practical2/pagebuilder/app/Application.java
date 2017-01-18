@@ -16,22 +16,22 @@ public class Application {
     public static void main(String[] args) throws IOException {
 
         //Initialisation des paths
-//        String current = new java.io.File(".").getCanonicalPath();
-//        System.out.println("Current dir:" + current);
-//        Path startFile = Paths.get("src", "isen", "java22017", "practical2", "pagebuilder", "index.html");
-//        System.out.println(startFile);
-//        Path outputFile = Paths.get("src", "isen", "java22017", "practical2", "pagebuilder", "output.html");
-//        System.out.println(outputFile);
-//
-//
-//        try {
-////            test01(startFile, outputFile);
-//            test02(startFile, outputFile);
-//        }catch (IOException e){
-//            e.printStackTrace();
-//        }
+        String current = new java.io.File(".").getCanonicalPath();
+        System.out.println("Current dir:" + current);
+        Path startFile = Paths.get("src", "isen", "java22017", "practical2", "pagebuilder", "index.html");
+        System.out.println(startFile);
+        Path outputFile = Paths.get("src", "isen", "java22017", "practical2", "pagebuilder", "output.html");
+        System.out.println(outputFile);
 
-        test03();
+
+        try {
+//            test01(startFile, outputFile);
+            test02(startFile, outputFile);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+//        test03();
 
     }
 
@@ -76,6 +76,4 @@ public class Application {
 
 
 }
-
-
 
