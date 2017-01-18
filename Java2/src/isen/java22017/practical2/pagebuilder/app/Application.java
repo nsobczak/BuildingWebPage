@@ -16,20 +16,22 @@ public class Application {
     public static void main(String[] args) throws IOException {
 
         //Initialisation des paths
-        String current = new java.io.File(".").getCanonicalPath();
-        System.out.println("Current dir:" + current);
-        Path startFile = Paths.get("src", "isen", "java22017", "practical2", "pagebuilder", "index.html");
-        System.out.println(startFile);
-        Path outputFile = Paths.get("src", "isen", "java22017", "practical2", "pagebuilder", "output.html");
-        System.out.println(outputFile);
+//        String current = new java.io.File(".").getCanonicalPath();
+//        System.out.println("Current dir:" + current);
+//        Path startFile = Paths.get("src", "isen", "java22017", "practical2", "pagebuilder", "index.html");
+//        System.out.println(startFile);
+//        Path outputFile = Paths.get("src", "isen", "java22017", "practical2", "pagebuilder", "output.html");
+//        System.out.println(outputFile);
+//
+//
+//        try {
+////            test01(startFile, outputFile);
+//            test02(startFile, outputFile);
+//        }catch (IOException e){
+//            e.printStackTrace();
+//        }
 
-
-        try {
-//            test01(startFile, outputFile);
-            test02(startFile, outputFile);
-        }catch (IOException e){
-            e.printStackTrace();
-        }
+        test03();
 
     }
 
@@ -66,6 +68,14 @@ public class Application {
         }
     }
 
+    public static void test03(){
+        PageBuilder builder = new PageBuilder();
+        System.out.println(builder.getFileToInclude("test line")); // prints null
+        System.out.println(builder.getFileToInclude("[[path/to/file]]")); // prints path/to/file
+    }
+
 
 }
+
+
 
