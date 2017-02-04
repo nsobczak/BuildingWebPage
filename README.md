@@ -1,6 +1,6 @@
 # JAVA_BuildingWebPage
 
-Program developed in java that build a web page.
+Java program that builds a web page.
 
 ## Structure
 
